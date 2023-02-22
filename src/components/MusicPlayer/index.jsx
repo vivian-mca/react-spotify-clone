@@ -8,6 +8,16 @@ import Seekbar from './Seekbar';
 import Track from './Track';
 import VolumeBar from './VolumeBar';
 
+// This component implements a music player with controls for 
+// playing, pausing, skipping forward and backward, and adjusting volume
+// States:
+  // - `duration` = duration of the current song
+  // - `seekTime`= time w/in the song where playback is currently focused
+  // - `appTime` = time w/in the song where the user is currently seeking
+  // - `volume` = volume level
+  // - `repeat` and `shuffle` = flags* for whether to repeat or shuffle playlist
+// *flags are a bool value that is used to indicate a particular condition/status
+// Event handlers: handlePlayPause, handleNextSong, handlePrevSong
 const MusicPlayer = () => {
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } = useSelector((state) => state.player);
   const [duration, setDuration] = useState(0);
